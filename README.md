@@ -1,40 +1,96 @@
 # DT013 – Sắp xếp nổi bọt có cờ dừng sớm
 
-**Sinh viên:** Phạm Đỗ Dương  
-**MSSV:** N24DCDT019  
-**Lớp:** D24CQDT01-N  
-**Học phần:** INT13185 – Nhóm 03  
-**Đề tài:** DT013 – Sắp xếp nổi bọt có cờ dừng sớm
+## 1. Thông tin sinh viên
 
-## Cấu trúc
+- **Họ và tên:** Phạm Đỗ Dương
+- **MSSV:** N24DCDT019
+- **Lớp:** D24CQDT01-N
+- **Học phần:** INT13185 – Nhóm 03
+- **Mã đề tài:** DT013
+- **Tên đề tài:** Sắp xếp nổi bọt có cờ dừng sớm
 
-- `src/DT013_N24DCDT019.jl`: thuật toán có cờ dừng sớm, bản đủ lượt để đối chiếu, hàm lần vết và demo.
-- `tests/tests_DT013_N24DCDT019.jl`: các ca kiểm thử độc lập và kiểm tra bộ đếm.
-- `evidence/`: nơi đặt 11 ảnh chụp thật A01–A11 sau khi chạy chương trình và thao tác GitHub.
-- `ThongTinNop.txt`: thông tin phiên bản cần hoàn thiện sau khi có repo GitHub thật.
+## 2. Mô tả đề tài
 
-## Điều kiện
+Cài đặt thuật toán sắp xếp nổi bọt (Bubble Sort) có sử dụng cờ dừng sớm bằng ngôn ngữ Julia.
 
-Cần cài Julia 1.x. Mã không yêu cầu gói ngoài thư viện chuẩn `Test`.
+Thuật toán so sánh các phần tử liền kề và đổi chỗ khi chúng không đúng thứ tự. Nếu một lượt duyệt không xảy ra phép đổi chỗ nào, thuật toán dừng sớm vì mảng đã được sắp xếp.
 
-## Chạy từ thư mục gốc dự án
+## 3. Cấu trúc dự án
 
-```sh
+```text
+DT013_N24DCDT019/
+├── src/
+│   └── DT013_N24DCDT019.jl
+├── tests/
+│   └── tests_DT013_N24DCDT019.jl
+├── evidence/
+│   ├── 01_vi_du_1.png
+│   ├── 02_vi_du_2.png
+│   ├── 03_tu_thiet_ke_1.png
+│   ├── 04_tu_thiet_ke_2.png
+│   ├── 05_truong_hop_xau_nhat.png
+│   ├── 06_phan_tu_trung.png
+│   ├── 07_mang_rong.png
+│   ├── 08_input_khong_hop_le.png
+│   ├── 09_tong_ket_kiem_thu.png
+│   ├── 10_clone_sach_chay_lai.png
+│   └── 11_github_repo_commit.png
+└── README.md
+```
+
+## 4. Yêu cầu môi trường
+
+- Đã cài đặt Julia 1.x.
+- Có thể chạy lệnh Julia trong Terminal của VS Code.
+- Các bài kiểm thử sử dụng thư viện `Test` có sẵn trong Julia.
+
+## 5. Cách chạy chương trình
+
+Mở Terminal tại thư mục gốc của dự án và chạy:
+
+```powershell
 julia src/DT013_N24DCDT019.jl
+```
+
+## 6. Cách chạy kiểm thử
+
+Chạy lệnh:
+
+```powershell
 julia tests/tests_DT013_N24DCDT019.jl
 ```
 
-## Hành vi thuật toán
+Kết quả kiểm thử cần được đối chiếu với màn hình thực tế. Khi chạy thành công, chụp ảnh kết quả để lưu vào thư mục `evidence/`.
 
-`noi_bot_co_co(a)` sắp xếp vector số nguyên tăng dần. Sau mỗi lượt, nếu không có hoán đổi, cờ `da_doi` vẫn `false` và vòng lặp dừng sớm. `noi_bot_du_luot(a)` chạy đủ lượt để làm bản đối chiếu. Hai hàm trả về một `NamedTuple` gồm `a`, `so_sanh`, `hoan_doi`, `so_luot`. Giới hạn độ dài trong bản này là 0–2000 phần tử; đầu vào dài hơn bị báo `ArgumentError`.
+## 7. Các trường hợp kiểm thử
 
-## Trước khi nộp – các bước bắt buộc chưa thể làm thay bạn
+- Ví dụ 1 và ví dụ 2 theo đề bài.
+- Mảng tự thiết kế có số nguyên dương và âm.
+- Mảng có phần tử trùng nhau.
+- Mảng giảm dần, là trường hợp xấu đối với thuật toán nổi bọt.
+- Mảng có các phần tử bằng nhau.
+- Mảng rỗng.
+- Đầu vào vượt quá giới hạn 2000 phần tử.
+- Chạy toàn bộ bộ kiểm thử tự động.
 
-1. Chạy hai lệnh trên bằng Julia thật; lưu output và xử lý mọi lỗi nếu có.
-2. Chụp ảnh màn hình thật, rõ lệnh/input/output: A01–A08 cho tám ca, A09 cho tổng kết test, A10 cho clone sạch chạy lại, A11 cho repo/commit trên GitHub. Lưu ảnh trong `evidence/` và chèn cùng ảnh vào báo cáo.
-3. Tạo repo GitHub và đẩy các tệp. Không dùng URL/SHA giả.
-4. Lấy commit bằng `git rev-parse HEAD`; ghi SHA đầy đủ C và permalink file tại C trong báo cáo. Sau khi hoàn thiện toàn bộ tệp, tạo commit cuối S và ghi SHA S vào `ThongTinNop.txt`.
-5. Clone S vào thư mục mới, chạy lại demo và test theo lệnh ở trên, chụp A10. Kiểm tra quyền truy cập repo và đường dẫn permalink.
-6. Xuất PDF từ đúng phiên bản DOCX cuối cùng.
+## 8. Ảnh minh chứng
 
-**Trạng thái:** gói mã, bộ test và báo cáo đã được chuẩn bị; chưa thể coi là bộ nộp hoàn chỉnh cho đến khi chạy Julia, chụp đủ 11 ảnh thật, tạo/kiểm tra repo GitHub, điền SHA C/S và kiểm thử clone sạch. Các mục này không được tự đánh dấu PASS khi chưa thực hiện.
+Thư mục `evidence/` dùng để lưu ảnh chụp màn hình thực tế:
+
+- `01_vi_du_1.png` đến `09_tong_ket_kiem_thu.png`: minh chứng chạy ví dụ, kiểm tra các trường hợp và kết quả kiểm thử.
+- `10_clone_sach_chay_lai.png`: minh chứng clone dự án từ GitHub vào một thư mục mới và chạy lại chương trình, kiểm thử.
+- `11_github_repo_commit.png`: minh chứng repository GitHub và commit của dự án.
+
+**Lưu ý:** Chỉ ghi nhận ảnh minh chứng là hoàn thành sau khi đã thực hiện thao tác tương ứng và chụp ảnh thật. Không dùng ảnh giả lập hoặc ghi kết quả chưa kiểm tra.
+
+## 9. Kiểm tra trước khi nộp
+
+- [ ] Chạy chương trình thành công.
+- [ ] Chạy bộ kiểm thử và kiểm tra kết quả thực tế.
+- [ ] Bổ sung đầy đủ ảnh minh chứng vào `evidence/`.
+- [ ] Đẩy mã nguồn lên repository GitHub.
+- [ ] Clone dự án vào thư mục mới và chạy lại chương trình, kiểm thử.
+- [ ] Kiểm tra README và các tệp cần nộp.
+- [ ] Hoàn thiện báo cáo theo yêu cầu của giảng viên.
+
+**Trạng thái:** Chưa xác nhận hoàn tất cho đến khi các bước kiểm tra, ảnh minh chứng và thao tác GitHub được thực hiện thực tế.
