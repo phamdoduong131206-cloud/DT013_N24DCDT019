@@ -1,0 +1,20 @@
+HỒ SƠ NỘP DT013 – THÔNG TIN PHIÊN BẢN
+Sinh viên: Phạm Đỗ Dương
+MSSV: N24DCDT019
+Lớp: D24CQDT01-N
+Học phần: INT13185 – Nhóm 03
+Mã đề: DT013 – Sắp xếp nổi bọt có cờ dừng sớm
+
+URL repo GitHub: CHƯA TẠO/CHƯA ĐƯỢC CUNG CẤP
+Full SHA commit C (phiên bản dùng chạy test và chụp A01–A09, A11): CHƯA CÓ
+Permalink hàm chính tại C: CHƯA CÓ
+Full SHA commit S (phiên bản cuối nộp): CHƯA CÓ
+Permalink repo tại S: CHƯA CÓ
+Lệnh chạy demo: julia src/DT013_N24DCDT019.jl
+Lệnh chạy test: julia tests/tests_DT013_N24DCDT019.jl
+Kết quả test thật: CHƯA XÁC MINH – cần chạy bằng Julia
+Clone sạch: CHƯA THỰC HIỆN
+Ảnh bằng chứng A01–A11: CHƯA CÓ – cần chụp thật
+
+Cách lấy SHA: sau khi commit phiên bản đã chạy, dùng `git rev-parse HEAD`.
+Không nộp tệp này khi các trường CHƯA CÓ còn nguyên; thay bằng dữ liệu thực sau khi hoàn thành.
